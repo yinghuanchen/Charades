@@ -10732,7 +10732,7 @@ var Drawing = /*#__PURE__*/function () {
 
 
     this.lineWidth = 5;
-    this.strokeStyle = '#A72C21';
+    this.strokeStyle = 'black';
   }
 
   _createClass(Drawing, [{
@@ -10930,7 +10930,8 @@ var Round = /*#__PURE__*/function () {
               }, 7000);
               resolve();
             } else if (timeleft < 0) {
-              document.getElementById("round-result").innerText = "Time's Up!";
+              document.getElementById("countdown").innerHTML = "Time's Up!";
+              document.getElementById("round-result").innerText = "The answer is ".concat(answer.toLowerCase());
               setTimeout(function () {
                 return handleEnd();
               }, 7000);
@@ -10948,7 +10949,8 @@ var Round = /*#__PURE__*/function () {
       document.getElementById("progressBar").style.display = "block";
       document.getElementById("answer").style.display = "block";
       document.getElementById("countdown").style.display = "block";
-      document.getElementById("guesser-guess-text").style.display = "block"; // wait for the answer
+      document.getElementById("guesser-guess-text").style.display = "block";
+      document.getElementById("acter-draw-text").style.display = "block"; // wait for the answer
 
       var run = /*#__PURE__*/function () {
         var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
@@ -10984,6 +10986,7 @@ var Round = /*#__PURE__*/function () {
       document.getElementById("progressBar").style.display = "none";
       document.getElementById("countdown").style.display = "none";
       document.getElementById("guesser-guess-text").style.display = "none";
+      document.getElementById("acter-draw-text").style.display = "none";
       document.getElementById("question").value = "";
       document.getElementById("question").style.display = "block";
       document.getElementById("submit-btn").style.display = "block";

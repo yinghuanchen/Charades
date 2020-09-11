@@ -23,7 +23,6 @@ export default class Game {
             }
         });
        this.run();
-        
     } 
 
     run() {    

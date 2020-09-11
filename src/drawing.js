@@ -27,7 +27,7 @@ export default class Drawing  {
 
       // default styling
       this.lineWidth = 5;
-      this.strokeStyle = '#A72C21';
+      this.strokeStyle = 'black';
     }
 
     setPosition(e) {

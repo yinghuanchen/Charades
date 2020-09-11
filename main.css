@@ -1,5 +1,6 @@
 body {
-    background: #fcf8f5;
+    background-image: url("https://5.imimg.com/data5/YV/MU/MY-26543581/vinyl-coated-fabric-500x500.jpg");
+    background-color: #fcf8f5;
 }
 
 .double-border-text {
@@ -78,7 +79,7 @@ button.big-button:active::before {
 }
 
 
-#start-round-btn, #round-result, #answer, #progressBar, #countdown, #guesser-turn-back-text, #guesser-guess-text {
+#start-round-btn, #round-result, #answer, #progressBar, #countdown, #guesser-turn-back-text, #guesser-guess-text, #acter-draw-text {
     display: none;
 }
 
@@ -107,7 +108,7 @@ button.big-button:active::before {
 }
 
 #clear {
-    margin-top: 100px;
+    margin-top: 90px;
 }
 
 form {
@@ -119,7 +120,7 @@ form {
 .guess-form {
     display: flex;
     flex-direction: column;
-    margin: 30px 0px 0px 130px;
+    margin: 0px 0px 0px 130px;
     align-items:center;
 }
 #submit-btn {
@@ -155,7 +156,8 @@ span {
 }
 
 #round-result {
-    margin-top: 25px; 
+    margin-top: 25px;
+    margin-right: -10px;
 }
 
 #start-round-btn {
@@ -184,4 +186,16 @@ span {
 
 #countdown {
     margin-bottom: 20px;
+}
+
+img {
+    height: 30px;
+    width: 30px;
+    object-fit: scale-down;
+}
+
+.eraser {
+    padding: 0px;
+    margin-top: 5px;
+    background: transparent;
 }
