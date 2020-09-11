@@ -1,18 +1,64 @@
 <!DOCTYPE html>
 <head>
     <title>Charades</title>
-    <script type="text/javascript" src="src/index.js" charset="utf-8" defer></script>
-    
-    <!-- type="text/javascript" -->
+    <link rel="stylesheet" href="./main.css" type="text/css">
+    <script src="dist/bundle.js"></script>
+    <!-- <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-replace-svg="nest"></script> -->
 </head>
 
 <body>
-    <h1>Draw Here!</h1>
-    <canvas style="border:2px solid;"  id="draw" height="640" width="640"></canvas>
-    <button id="clear">Clear!</button>
-    <progress value="0" max="60" id="progressBar"></progress>
-     <!-- <script type="application/javascript" src="./dist/bundle.js"></script> -->
+    <div class="double-border-text">Charades</div>
+    <div class="game-form">
+        <div class="input-box">
+            <form id="question-form" >
+                <span id="guesser-question-text">Guesser turn around</span>
+                <span id="acter-question-text">Acter submit the answer</span>
+                <input type="text" placeholder="Question" class="clean-slide" id="question">
+                <button id="submit-btn" class="big-button">Submit</button>
+            </form>
+            <span id="guesser-turn-back-text">Guesser turn back</span>
+            <button id="start-round-btn" class="big-button">Start Round</button>
+            <div class="guess-form">       
+                <span id="guesser-guess-text">Guesser guess the answer</span>
+                    <progress value="60" max="60" id="progressBar"></progress>   
+                    <span id="countdown">60 seconds remaining</span>
+                <input type="text" placeholder="Answer" id="answer" class="clean-slide">
+                <span id="round-result"></span>
+            </div>
+            
+        </div>
 
+        <div class="drawing">
+            <div class="frame">
+                <canvas id="draw" height="520" width="640"></canvas>
+            </div>
+            <div class="color-bar">
+                <div class="color-box">
+                    <div style="background:black;" class="color-btn" style="background:black;" id="black"></div>
+                    <div style="background:#57302C" class="color-btn" style="background:#57302C;" id="#57302C"></div>
+                    <div style="background:#1962A8" class="color-btn" style="background:#1962A8;" id="#1962A8"></div>
+                    <div style="background:#01A11A" class="color-btn" style="background:#01A11A;" id="#01A11A"></div>
+                    <div style="background:#6CB051" class="color-btn" style="background:#6CB051;" id="#6CB051"></div>
+                    <div style="background:#1E812B;" class="color-btn" style="background:#1E812B;" id="#1E812B"></div>
+                    <div style="background:#FCEC01;" class="color-btn" style="background:#FCEC01;" id="#FCEC01"></div>
+                    <div style="background:#E8B601" class="color-btn" style="background:#E8B601;" id="#FCEC01"></div>
+                    <div style="background:#A72C21;" class="color-btn" style="background:#A72C21;" id="#A72C21"></div>
+                    <div style="background:#D22882;" class="color-btn" style="background:#D22882;" id="#D22882"></div>
+                    <button class="color-btn" id="#e0cab3"></button>
+                    <!-- <div style="background:white;" class="color-btn" style="background:white;" id="white"></div> -->
+                </div>
+                <button id="clear"  class="big-button">Clear!</button>
+            </div>
+           
+
+        </div>
+        
+       
+    </div>
+   
+   
+  
+   
 </body>
 
 </html>

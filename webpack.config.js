@@ -1,26 +1,34 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
-    entry: './src/index.js',
+    context: __dirname,
+    entry: ['@babel/polyfill', './src/index.js'],
     output: {
-        filename: './bundle.js',
+        path: path.resolve(__dirname),
+        filename: 'dist/bundle.js'
     },
     module: {
         rules: [
             {
-                test: [/\.jsx?$/],
+                test: /\.jsx?$/,
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
                     query: {
-                        presets: ['@babel/env']
+                        presets: ['@babel/env', '@babel/react']
                     }
                 },
-            }
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                loaders: ['style-loader', 'css-loader'],
+            },
+
         ]
     },
     devtool: 'source-map',
     resolve: {
-        extensions: ['.js', '.jsx', '*']
+        extensions: [".js", ".jsx", "*"]
     }
 };
