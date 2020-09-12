@@ -81,7 +81,7 @@ button.big-button:active::before {
 }
 
 
-#start-round-btn, #round-result, #answer, #progressBar, #countdown, #guesser-turn-back-text, #guesser-guess-text, #acter-draw-text {
+#start-round-btn, #round-result, #answer, #progressBar, #countdown, #guesser-turn-back-text, #guesser-guess-text, #acter-draw-text  {
     display: none;
 }
 
@@ -126,7 +126,7 @@ form {
     align-items:center;
 }
 #submit-btn {
-    margin: 20px 0px;
+    margin: 10px 0px;
     width: 150px;
 }
 progress[value]{
@@ -206,6 +206,52 @@ p {
     text-align:center;
     width: 250px;
 }
+#information-div {
+    display: inline-block;
+    position: relative;
+     top: -25px;
+    left: 25px;
+}
+
+#information  {
+   
+    color: #80471C; 
+    cursor: pointer;
+}
+#information-text {
+    position: absolute;
+    padding: 10px 5px;
+    display:none;
+    top: -60px;
+    left: -10px;
+    min-width: 270px;
+    background-color: #504444;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    color: black;
+    z-index: 3;
+    text-align: center;
+}
+
+#information-text:after {
+   content: " ";
+  position: absolute;
+  left:15px;
+  bottom: -15px;
+  border-top: 15px solid #504444;
+  border-right: 20px solid transparent;
+  border-left: 7px solid transparent;
+  border-bottom: none;
+}
+#information-text span {
+    font-size: 18px;
+    color: white;
+}
+
+#information-div:hover #information-text {
+    display: block;
+}
+
 
 :root {
   /* Base font size */

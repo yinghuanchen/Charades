@@ -3,7 +3,7 @@
     <title>Charades</title>
     <link rel="stylesheet" href="./main.css" type="text/css">
     <script src="dist/bundle.js"></script>
-    <!-- <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-replace-svg="nest"></script> -->
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-replace-svg="nest"></script>
 </head>
 
 <body>
@@ -19,6 +19,12 @@
                 <span id="guesser-question-text">Guesser turn around</span>
                 <span id="acter-question-text">Acter submit the answer</span>
                 <input type="text" placeholder="Question" class="clean-slide" id="question">
+                <div id="information-div">
+                    <i class="fas fa-question-circle fa-2x" id="information"></i>
+                    <div id="information-text">
+                        <span>Click to select a random question</span>
+                    </div>
+                </div>
                 <button id="submit-btn" class="big-button">Submit</button>
             </form>
             <span id="guesser-turn-back-text">Guesser turn back</span>

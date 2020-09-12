@@ -10783,6 +10783,7 @@ var Drawing = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Game; });
 /* harmony import */ var _round__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./round */ "./src/round.js");
+/* harmony import */ var _sample_problem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sample_problem */ "./src/sample_problem.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -10790,7 +10791,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 
-var SAMPLE_PROBLEM = ['owl', 'apple', 'banana'];
+
 
 var Game = /*#__PURE__*/function () {
   function Game() {
@@ -10800,6 +10801,10 @@ var Game = /*#__PURE__*/function () {
 
     this.run = this.run.bind(this);
     this.totalRound = 0;
+    document.getElementById("information").addEventListener('click', function () {
+      var rand = Math.floor(Math.random() * (_sample_problem__WEBPACK_IMPORTED_MODULE_1__["default"].length - 0));
+      document.getElementById("question").value = _sample_problem__WEBPACK_IMPORTED_MODULE_1__["default"][rand];
+    });
     document.getElementById("question-form").addEventListener("submit", function (e) {
       e.preventDefault();
       var answer = document.getElementById("question").value;
@@ -10809,6 +10814,7 @@ var Game = /*#__PURE__*/function () {
         document.getElementById("submit-btn").style.display = "none";
         document.getElementById("guesser-question-text").style.display = "none";
         document.getElementById("acter-question-text").style.display = "none";
+        document.getElementById("information-div").style.display = "none";
 
         _this.run(answer);
       } else {
@@ -10925,7 +10931,7 @@ var Round = /*#__PURE__*/function () {
       // Wait for the answer
       function waitForCondition(answer, handleEnd, handleWin) {
         return new Promise(function (resolve) {
-          var timeleft = 5;
+          var timeleft = 60;
 
           function checkAnswer() {
             document.getElementById("progressBar").value = timeleft;
@@ -11002,13 +11008,13 @@ var Round = /*#__PURE__*/function () {
       document.getElementById("submit-btn").style.display = "block";
       document.getElementById("guesser-question-text").style.display = "block";
       document.getElementById("acter-question-text").style.display = "block";
+      document.getElementById("information-div").style.display = "inline-block";
     }
   }, {
     key: "handleWin",
     value: function handleWin() {
       var winRound = parseInt(document.getElementById("win-round").innerText);
       winRound += 1;
-      console.log(winRound);
       document.getElementById("win-round").innerText = winRound;
     }
   }]);
@@ -11017,6 +11023,20 @@ var Round = /*#__PURE__*/function () {
 }();
 
 
+
+/***/ }),
+
+/***/ "./src/sample_problem.js":
+/*!*******************************!*\
+  !*** ./src/sample_problem.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var SAMPLE_PROBLEM = ["Owl", "Bumblebee", "Giraffe", "Horse", "Swimming", "Swimming Pool", "Brushing Teeth", "Building a Sandcastle", "Driving a Car", "Dancing", "Opening a Gift", "Eiffel Tower", "Seattle Space Needle", "Statue of Liberty", "Grand Canyon", "Frozen", "Spiderman", "The Lion King", "Toy Story", "Community", "Volunteer", "Programming", "Covid"];
+/* harmony default export */ __webpack_exports__["default"] = (SAMPLE_PROBLEM);
 
 /***/ }),
 

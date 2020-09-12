@@ -86,12 +86,12 @@ export default class Round {
     document.getElementById("submit-btn").style.display = "block";
     document.getElementById("guesser-question-text").style.display = "block";
     document.getElementById("acter-question-text").style.display = "block";
+     document.getElementById("information-div").style.display = "inline-block";
   }
 
   handleWin() {
     let winRound =  parseInt(document.getElementById("win-round").innerText);
     winRound += 1;
-    console.log(winRound); 
     document.getElementById("win-round").innerText = winRound; 
   }
 
