@@ -34,7 +34,7 @@ The following scripts are used to support the game implementation:
   
 ## 4. Code snippets 
 
-Each round the 
+The game round will stop as soon as Guesser type in the correct answer or the time is up. I used await and async function to realize this logic. The async run function will wait until either the two conditions are fulfilled, otherwise it will do the same check 1 second later.  
 
 
 ```javascript
