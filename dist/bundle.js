@@ -10722,7 +10722,7 @@ var Drawing = /*#__PURE__*/function () {
       colorBtns.item(i).addEventListener("click", function () {
         _this.strokeStyle = colorBtns.item(i).id;
         _this.lineWidth = 5;
-        if (colorBtns.item(i).id == "#e0cab3") _this.lineWidth = 25;
+        if (colorBtns.item(i).id === "#e0cab3") _this.lineWidth = 25;
       });
     };
 
@@ -10826,9 +10826,13 @@ var Game = /*#__PURE__*/function () {
   _createClass(Game, [{
     key: "run",
     value: function run(answer) {
-      var round = new _round__WEBPACK_IMPORTED_MODULE_0__["default"](answer);
+      var round = {};
+      round.instance = new _round__WEBPACK_IMPORTED_MODULE_0__["default"](answer);
+      round.instance = null;
       this.totalRound += 1;
       document.getElementById("total-round").innerText = "".concat(this.totalRound);
+      delete round.instance;
+      return;
     }
   }]);
 
@@ -10863,7 +10867,7 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener("DOMContentLoaded", function () {
   var canvas = document.getElementById("draw");
   new _drawing__WEBPACK_IMPORTED_MODULE_0__["default"](canvas);
-  new _game__WEBPACK_IMPORTED_MODULE_1__["default"](); //new Round("owl"); 
+  new _game__WEBPACK_IMPORTED_MODULE_1__["default"](); //new Round("owl");
 });
 
 /***/ }),
@@ -10893,8 +10897,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var Round = /*#__PURE__*/function () {
   function Round(answer) {
-    var _this = this;
-
     _classCallCheck(this, Round);
 
     this.answer = answer;
@@ -10903,32 +10905,39 @@ var Round = /*#__PURE__*/function () {
     this.loading = this.loading.bind(this);
     this.handleEnd = this.handleEnd.bind(this);
     this.handleWin = this.handleWin.bind(this);
-    var startRoundBtn = document.getElementById("start-round-btn");
-    startRoundBtn.addEventListener("click", function () {
-      _this.start(_this.answer);
-
-      document.getElementById("start-round-btn").style.display = "none";
-      document.getElementById("guesser-turn-back-text").style.display = "none";
-    });
     this.loading(answer);
   }
 
   _createClass(Round, [{
     key: "loading",
     value: function loading(answer) {
-      var canvas = document.getElementById("draw");
-      new _drawing__WEBPACK_IMPORTED_MODULE_0__["default"](canvas);
+      var _this = this;
+
       document.getElementById("start-round-btn").style.display = "block";
       document.getElementById("guesser-turn-back-text").style.display = "block";
       document.getElementById("round-result").innerText = "";
       document.getElementById("answer").value = "";
+      var startRoundBtn = document.getElementById("start-round-btn");
+      startRoundBtn.addEventListener("click", function () {
+        _this.start(answer);
+      }, {
+        once: true
+      });
+      return;
     }
   }, {
     key: "start",
     value: function start(answer) {
       var _this2 = this;
 
-      // Wait for the answer
+      // const canvas = document.getElementById("draw");
+      // new Drawing(canvas);
+      var canvas = document.getElementById("draw");
+      var ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      document.getElementById("start-round-btn").style.display = "none";
+      document.getElementById("guesser-turn-back-text").style.display = "none"; // Wait for the answer
+
       function waitForCondition(answer, handleEnd, handleWin) {
         return new Promise(function (resolve) {
           var timeleft = 60;
@@ -10940,17 +10949,17 @@ var Round = /*#__PURE__*/function () {
 
             if (document.getElementById("answer").value.toLowerCase() === answer.toLowerCase()) {
               document.getElementById("round-result").innerText = "Well Done!";
-              setTimeout(function () {
-                return handleEnd();
-              }, 7000);
               handleWin();
+              window.setTimeout(function () {
+                return handleEnd();
+              }, 5000);
               resolve();
             } else if (timeleft < 0) {
               document.getElementById("countdown").innerHTML = "Time's Up!";
               document.getElementById("round-result").innerText = "The answer is ".concat(answer.toLowerCase());
-              setTimeout(function () {
+              window.setTimeout(function () {
                 return handleEnd();
-              }, 7000);
+              }, 5000);
               resolve();
             } else {
               window.setTimeout(checkAnswer, 1000);
@@ -10978,6 +10987,9 @@ var Round = /*#__PURE__*/function () {
                   return waitForCondition(answer, _this2.handleEnd, _this2.handleWin);
 
                 case 2:
+                  return _context.abrupt("return");
+
+                case 3:
                 case "end":
                   return _context.stop();
               }
@@ -10991,10 +11003,12 @@ var Round = /*#__PURE__*/function () {
       }();
 
       run();
+      return;
     }
   }, {
     key: "handleEnd",
     value: function handleEnd() {
+      // debugger;
       document.getElementById("round-result").innerText = "";
       document.getElementById("round-result").style.display = "none";
       document.getElementById("start-round-btn").style.display = "none";
@@ -11009,12 +11023,18 @@ var Round = /*#__PURE__*/function () {
       document.getElementById("guesser-question-text").style.display = "block";
       document.getElementById("acter-question-text").style.display = "block";
       document.getElementById("information-div").style.display = "inline-block";
+      var canvas = document.getElementById("draw");
+      var ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
   }, {
     key: "handleWin",
     value: function handleWin() {
-      var winRound = parseInt(document.getElementById("win-round").innerText);
-      winRound += 1;
+      // debugger;
+      var winRound = parseInt(document.getElementById("win-round").innerText); // console.log("win before", winRound);
+
+      winRound += 1; // console.log("win after", winRound);
+
       document.getElementById("win-round").innerText = winRound;
     }
   }]);
@@ -11035,7 +11055,7 @@ var Round = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var SAMPLE_PROBLEM = ["Owl", "Bumblebee", "Giraffe", "Horse", "Swimming", "Swimming Pool", "Brushing Teeth", "Building a Sandcastle", "Driving a Car", "Dancing", "Opening a Gift", "Eiffel Tower", "Seattle Space Needle", "Statue of Liberty", "Grand Canyon", "Frozen", "Spiderman", "The Lion King", "Toy Story", "Community", "Volunteer", "Programming", "Covid"];
+var SAMPLE_PROBLEM = ["Owl", "Bumblebee", "Giraffe", "Horse", "Swimming", "Swimming Pool", "Brushing Teeth", "Building a Sandcastle", "Driving a Car", "Dancing", "Dating", "Opening a Gift", "Eiffel Tower", "Seattle Space Needle", "Statue of Liberty", "Grand Canyon", "Frozen", "Spiderman", "The Lion King", "Toy Story", "Community", "Volunteer", "Programming", "Covid"];
 /* harmony default export */ __webpack_exports__["default"] = (SAMPLE_PROBLEM);
 
 /***/ }),

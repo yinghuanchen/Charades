@@ -21,7 +21,7 @@ export default class Drawing  {
         colorBtns.item(i).addEventListener("click", () => {
           this.strokeStyle = colorBtns.item(i).id;
           this.lineWidth = 5;
-          if (colorBtns.item(i).id == "#e0cab3") this.lineWidth = 25;
+          if (colorBtns.item(i).id === "#e0cab3") this.lineWidth = 25;
         });
       }
 

@@ -7,25 +7,34 @@ export default class Round {
     this.loading = this.loading.bind(this);
     this.handleEnd = this.handleEnd.bind(this);
     this.handleWin = this.handleWin.bind(this);
-    const startRoundBtn = document.getElementById("start-round-btn");
-    startRoundBtn.addEventListener("click", () => {
-      this.start(this.answer);
-      document.getElementById("start-round-btn").style.display = "none";
-      document.getElementById("guesser-turn-back-text").style.display = "none";
-    });
     this.loading(answer);
   }
 
   loading(answer) {
-    const canvas = document.getElementById("draw");
-    new Drawing(canvas);
     document.getElementById("start-round-btn").style.display = "block";
     document.getElementById("guesser-turn-back-text").style.display = "block";
     document.getElementById("round-result").innerText = "";
     document.getElementById("answer").value = "";
+    const startRoundBtn = document.getElementById("start-round-btn");
+    startRoundBtn.addEventListener(
+      "click",
+      () => {
+        this.start(answer);
+      },
+      { once: true }
+    );
+  
+    return;
   }
 
   start(answer) {
+    // const canvas = document.getElementById("draw");
+    // new Drawing(canvas);
+    const canvas = document.getElementById("draw");
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    document.getElementById("start-round-btn").style.display = "none";
+    document.getElementById("guesser-turn-back-text").style.display = "none";
     // Wait for the answer
     function waitForCondition(answer, handleEnd, handleWin) {
       return new Promise((resolve) => {
@@ -40,15 +49,15 @@ export default class Round {
             answer.toLowerCase()
           ) {
             document.getElementById("round-result").innerText = "Well Done!";
-            setTimeout(() => handleEnd(), 7000);
-             handleWin();
+            handleWin();
+            window.setTimeout(()=> handleEnd(), 5000);
             resolve();
           } else if (timeleft < 0) {
             document.getElementById("countdown").innerHTML = "Time's Up!";
             document.getElementById(
               "round-result"
             ).innerText = `The answer is ${answer.toLowerCase()}`;
-            setTimeout(() => handleEnd(), 7000);
+            window.setTimeout(() => handleEnd(), 5000);
             resolve();
           } else {
             window.setTimeout(checkAnswer, 1000);
@@ -66,13 +75,18 @@ export default class Round {
 
     // wait for the answer
     const run = async () => {
+    //   console.log("before");
       await waitForCondition(answer, this.handleEnd, this.handleWin);
+    //   console.log("after");
+      return;
     };
 
     run();
+    return;
   }
 
   handleEnd() {
+    // debugger;
     document.getElementById("round-result").innerText = "";
     document.getElementById("round-result").style.display = "none";
     document.getElementById("start-round-btn").style.display = "none";
@@ -86,13 +100,18 @@ export default class Round {
     document.getElementById("submit-btn").style.display = "block";
     document.getElementById("guesser-question-text").style.display = "block";
     document.getElementById("acter-question-text").style.display = "block";
-     document.getElementById("information-div").style.display = "inline-block";
+    document.getElementById("information-div").style.display = "inline-block";
+    const canvas = document.getElementById("draw");
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 
   handleWin() {
-    let winRound =  parseInt(document.getElementById("win-round").innerText);
+    // debugger;
+    let winRound = parseInt(document.getElementById("win-round").innerText);
+    // console.log("win before", winRound);
     winRound += 1;
-    document.getElementById("win-round").innerText = winRound; 
+    // console.log("win after", winRound);
+    document.getElementById("win-round").innerText = winRound;
   }
-
 }

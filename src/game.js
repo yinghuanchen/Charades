@@ -28,8 +28,12 @@ export default class Game {
   }
 
   run(answer) {
-    const round = new Round(answer);
+    const round = {};
+    round.instance = new Round(answer);
+    round.instance = null; 
     this.totalRound += 1;
-    document.getElementById("total-round").innerText = `${this.totalRound}`;
+    document.getElementById("total-round").innerText = `${this.totalRound}`; 
+    delete round.instance;
+    return; 
   }
 }
