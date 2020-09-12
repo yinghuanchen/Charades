@@ -34,40 +34,40 @@ The following scripts are used to support the game implementation:
   
 ## 4. Code snippets 
 
+Each round the 
+
+
 ```javascript
 function waitForCondition(answer, handleEnd, handleWin) {
       return new Promise((resolve) => {
-        let timeleft = 60;
-        function checkAnswer() {
-          document.getElementById("progressBar").value = timeleft;
-          document.getElementById("countdown").innerHTML =
-            timeleft + " seconds remaining";
-          timeleft--;
-          if (
-            document.getElementById("answer").value.toLowerCase() ===
-            answer.toLowerCase()
-          ) {
-            document.getElementById("round-result").innerText = "Well Done!";
-            handleWin();
-            window.setTimeout(()=> handleEnd(), 5000);
-            resolve();
-          } else if (timeleft < 0) {
-            document.getElementById("countdown").innerHTML = "Time's Up!";
-            document.getElementById(
-              "round-result"
-            ).innerText = `The answer is ${answer.toLowerCase()}`;
-            window.setTimeout(() => handleEnd(), 5000);
-            resolve();
-          } else {
-            window.setTimeout(checkAnswer, 1000);
+          let timeleft = 60;
+          function checkAnswer() {
+            document.getElementById("progressBar").value = timeleft;
+            document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+            timeleft--;
+            if (
+              document.getElementById("answer").value.toLowerCase() ===
+              answer.toLowerCase()
+            ) {
+              document.getElementById("round-result").innerText = "Well Done!";
+              handleWin();
+              window.setTimeout(()=> handleEnd(), 5000);
+              resolve();
+            } else if (timeleft < 0) {
+              document.getElementById("countdown").innerHTML = "Time's Up!";
+              document.getElementById("round-result").innerText = `The answer is ${answer}`;
+              window.setTimeout(() => handleEnd(), 5000);
+              resolve();
+            } else {
+              window.setTimeout(checkAnswer, 1000);
+            }
           }
-        }
-        checkAnswer();
+          checkAnswer();
       });
-    }
-     const run = async () => {
-      await waitForCondition(answer, this.handleEnd, this.handleWin);
-    };
-    run();
+ }
+const run = async () => {
+  await waitForCondition(answer, this.handleEnd, this.handleWin);
+};
+run();
 
 ```
