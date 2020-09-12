@@ -21,3 +21,53 @@ Charades has always been a party game hit. It is a word guessing game, with one 
 ![score](https://user-images.githubusercontent.com/65005487/93006464-2fd77800-f58f-11ea-9245-87ecd19257a1.gif) 
 
 ## 3. Architecture and Technology 
+
+The project is implemented with:
+  * JavaScript for the overall gaming logic
+  * HTML5 Canvas for drawing 
+  * Webpack as the JS module bundler 
+  
+The following scripts are used to support the game implementation: 
+  * drawing.js: The canvas for user to draw and change color 
+  * round.js: The game logic for a round, including checking the answer that Guesser typed in and a countdown timer. 
+  * game.js:  The game logic for several rounds and record the score.  
+  
+## 4. Code snippets 
+
+```javascript
+function waitForCondition(answer, handleEnd, handleWin) {
+      return new Promise((resolve) => {
+        let timeleft = 60;
+        function checkAnswer() {
+          document.getElementById("progressBar").value = timeleft;
+          document.getElementById("countdown").innerHTML =
+            timeleft + " seconds remaining";
+          timeleft--;
+          if (
+            document.getElementById("answer").value.toLowerCase() ===
+            answer.toLowerCase()
+          ) {
+            document.getElementById("round-result").innerText = "Well Done!";
+            handleWin();
+            window.setTimeout(()=> handleEnd(), 5000);
+            resolve();
+          } else if (timeleft < 0) {
+            document.getElementById("countdown").innerHTML = "Time's Up!";
+            document.getElementById(
+              "round-result"
+            ).innerText = `The answer is ${answer.toLowerCase()}`;
+            window.setTimeout(() => handleEnd(), 5000);
+            resolve();
+          } else {
+            window.setTimeout(checkAnswer, 1000);
+          }
+        }
+        checkAnswer();
+      });
+    }
+     const run = async () => {
+      await waitForCondition(answer, this.handleEnd, this.handleWin);
+    };
+    run();
+
+```
