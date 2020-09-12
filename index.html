@@ -8,6 +8,11 @@
 
 <body>
     <div class="double-border-text">Charades</div>
+    <div class="score-box"> 
+        <span class="score">Score</span>
+        <br>
+        <span id="win-round">0</span> <span>&nbsp;/&nbsp;</span> <span id="total-round">0</span>
+    </div>
     <div class="game-form">
         <div class="input-box">
             <form id="question-form" >
@@ -24,7 +29,7 @@
                     <progress value="60" max="60" id="progressBar"></progress>   
                     <span id="countdown">60 seconds remaining</span>
                 <input type="text" placeholder="Answer" id="answer" class="clean-slide">
-                <span id="round-result"></span>
+                <p id="round-result"></p>
             </div>
             
         </div>

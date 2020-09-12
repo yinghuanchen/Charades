@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Exo+2:200i");
 body {
     background-image: url("https://5.imimg.com/data5/YV/MU/MY-26543581/vinyl-coated-fabric-500x500.jpg");
     background-color: #fcf8f5;
@@ -32,7 +33,8 @@ button.big-button {
    padding: 10px 20px;
    border: 2px solid #504444;
   border-radius: 20px;
-  background: #B89778;
+  /* background-image: url("https://img.freepik.com/free-photo/old-wooden-texture-background-vintage_55716-1138.jpg?size=626&ext=jpg"); */
+  background-color: #B89778;
 transform-style: preserve-3d;
    transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
@@ -45,7 +47,7 @@ button.big-button::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #977961;
+  background-color: #977961;
   border-radius: inherit;
   box-shadow: 0 0 0 2px #977961, 0 0.4em 0 0 #504444;
   transform: translate3d(0, 0.4em, -1em);
@@ -114,7 +116,7 @@ button.big-button:active::before {
 form {
     display: flex;
     flex-direction: column;
-    margin: 150px 0px 0px 130px;
+    margin: 200px 0px 0px 130px;
     align-items: flex-end;
 }
 .guess-form {
@@ -147,7 +149,7 @@ progress::-webkit-progress-value {
     color: #b76f20; 
 }
 
-span {
+span, p {
     color: #504444;
     font-family: inherit;
     font-size: 25px;
@@ -181,7 +183,7 @@ span {
 }
 
 #input-box {
-    display: block;
+    display: block; 
 }
 
 #countdown {
@@ -198,4 +200,85 @@ img {
     padding: 0px;
     margin-top: 5px;
     background: transparent;
+}
+
+p {
+    text-align:center;
+    width: 250px;
+}
+
+:root {
+  /* Base font size */
+  font-size: 10px;   
+  
+  /* Set neon color */
+  --neon-text-color: #ab7135;
+  /* --neon-border-color: #08f; */
+}
+
+
+
+.score-box {
+    position: absolute; 
+    left: 150px;
+    top: 150px;
+    display: inline-block; 
+    text-align: center;
+    padding:0;
+    width:250px;
+    height:100px;
+    margin-bottom: 80px;
+    /* border:4px solid #977961; */
+    outline:none;
+    background-image: url("https://img.freepik.com/free-photo/wooden-background_24972-623.jpg?size=626&ext=jpg");
+    background-color:#5d2906;
+    border-radius: 40px;
+    box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+
+}
+.score-box span {
+     font-size: 40px;
+     color:  #f5ede6;
+     animation: flicker 1.5s infinite alternate;     
+}
+
+#win-round::-moz-selection {
+  background-color: var(--neon-border-color);
+  color: var(--neon-text-color);
+}
+
+#win-round::selection {
+  background-color: var(--neon-border-color);
+  color: var(--neon-text-color);
+}
+
+#win-round:focus {
+  outline: none;
+}
+@keyframes flicker {
+    
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      
+        text-shadow:
+            -0.2rem -0.2rem 1rem #f5ede6,
+            0.2rem 0.2rem 1rem #f5ede6,
+            0 0 2rem var(--neon-text-color),
+            0 0 4rem var(--neon-text-color),
+            0 0 6rem var(--neon-text-color),
+            0 0 8rem var(--neon-text-color),
+            0 0 10rem var(--neon-text-color);
+        
+        box-shadow:
+            0 0 .5rem #f5ede6,
+            inset 0 0 .5rem #f5ede6,
+            0 0 2rem var(--neon-border-color),
+            inset 0 0 2rem var(--neon-border-color),
+            0 0 4rem var(--neon-border-color),
+            inset 0 0 4rem var(--neon-border-color);        
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
+    }    
 }

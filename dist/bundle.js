@@ -9525,7 +9525,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".frame {\n  position: fixed;\n  background-color:#e0cab3;\n  border:solid 5vmin #5d2906;\n  border-bottom-color:#6F432A;\n  border-left-color:#5A3B28;\n  border-radius:2px;\n  border-right-color:#6F432A;\n  border-top-color:#5A3B28;\n  box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);\n  box-sizing:border-box;\n  display:inline-block;\n  height:80vh;\n  padding:0;\n  &:before {\n    border-radius:2px;\n    bottom:-2vmin;\n    box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;\n    content:\"\";\n    left:-2vmin;\n    position:absolute;\n    right:-2vmin;\n    top:-2vmin;\n  }\n  &:after {\n    border-radius:2px;\n    bottom:-2.5vmin;\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);\n    content:\"\";\n    left:-2.5vmin;\n    position:absolute;\n    right:-2.5vmin;\n    top:-2.5vmin;\n  }\n}\n\n.clean-slide {\n  position: relative;\n  display: inline-block;\n  width: 250px;\n  padding: 0px 10px;\n  height: 60px;\n  font-family: \"Open Sans\", sans;\n  font-size: 20px;\n  font-weight: bold;\n  color: #3B3024;\n  background: #efefef;\n  border-radius: 10px;\n  outline: 0;\n  transition: all .3s ease-in-out;\n  border: 3px solid #91553D;\n  \n  &::-webkit-input-placeholder {\n    color: #efefef;\n    font-weight: 300;\n  }\n}\n.clean-slide:focus,\n.clean-slide:active {\n  color: #3B3024;\n  text-indent: 0;\n  background: #fff5E1;\n\n  \n  &::-webkit-input-placeholder {\n    color: #aaa;\n  }\n}\n\n\n\n\n\n", "",{"version":3,"sources":["webpack://src/styles/index.scss"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,wBAAwB;EACxB,0BAA0B;EAC1B,2BAA2B;EAC3B,yBAAyB;EACzB,iBAAiB;EACjB,0BAA0B;EAC1B,wBAAwB;EACxB,0EAA0E;EAC1E,qBAAqB;EACrB,oBAAoB;EACpB,WAAW;EACX,SAAS;EACT;IACE,iBAAiB;IACjB,aAAa;IACb,4CAA4C;IAC5C,UAAU;IACV,WAAW;IACX,iBAAiB;IACjB,YAAY;IACZ,UAAU;EACZ;EACA;IACE,iBAAiB;IACjB,eAAe;IACf,uCAAuC;IACvC,UAAU;IACV,aAAa;IACb,iBAAiB;IACjB,cAAc;IACd,YAAY;EACd;AACF;;AAEA;EACE,kBAAkB;EAClB,qBAAqB;EACrB,YAAY;EACZ,iBAAiB;EACjB,YAAY;EACZ,8BAA8B;EAC9B,eAAe;EACf,iBAAiB;EACjB,cAAc;EACd,mBAAmB;EACnB,mBAAmB;EACnB,UAAU;EACV,+BAA+B;EAC/B,yBAAyB;;EAEzB;IACE,cAAc;IACd,gBAAgB;EAClB;AACF;AACA;;EAEE,cAAc;EACd,cAAc;EACd,mBAAmB;;;EAGnB;IACE,WAAW;EACb;AACF","sourcesContent":[".frame {\n  position: fixed;\n  background-color:#e0cab3;\n  border:solid 5vmin #5d2906;\n  border-bottom-color:#6F432A;\n  border-left-color:#5A3B28;\n  border-radius:2px;\n  border-right-color:#6F432A;\n  border-top-color:#5A3B28;\n  box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);\n  box-sizing:border-box;\n  display:inline-block;\n  height:80vh;\n  padding:0;\n  &:before {\n    border-radius:2px;\n    bottom:-2vmin;\n    box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;\n    content:\"\";\n    left:-2vmin;\n    position:absolute;\n    right:-2vmin;\n    top:-2vmin;\n  }\n  &:after {\n    border-radius:2px;\n    bottom:-2.5vmin;\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);\n    content:\"\";\n    left:-2.5vmin;\n    position:absolute;\n    right:-2.5vmin;\n    top:-2.5vmin;\n  }\n}\n\n.clean-slide {\n  position: relative;\n  display: inline-block;\n  width: 250px;\n  padding: 0px 10px;\n  height: 60px;\n  font-family: \"Open Sans\", sans;\n  font-size: 20px;\n  font-weight: bold;\n  color: #3B3024;\n  background: #efefef;\n  border-radius: 10px;\n  outline: 0;\n  transition: all .3s ease-in-out;\n  border: 3px solid #91553D;\n  \n  &::-webkit-input-placeholder {\n    color: #efefef;\n    font-weight: 300;\n  }\n}\n.clean-slide:focus,\n.clean-slide:active {\n  color: #3B3024;\n  text-indent: 0;\n  background: #fff5E1;\n\n  \n  &::-webkit-input-placeholder {\n    color: #aaa;\n  }\n}\n\n\n\n\n\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".frame {\n  position: fixed;\n  background-color:#e0cab3;\n  border:solid 5vmin #5d2906;\n  border-bottom-color:#6F432A;\n  border-left-color:#5A3B28;\n  border-radius:2px;\n  border-right-color:#6F432A;\n  border-top-color:#5A3B28;\n  box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);\n  box-sizing:border-box;\n  display:inline-block;\n  height:76vh;\n  padding:0;\n  &:before {\n    border-radius:2px;\n    bottom:-2vmin;\n    box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;\n    content:\"\";\n    left:-2vmin;\n    position:absolute;\n    right:-2vmin;\n    top:-2vmin;\n  }\n  &:after {\n    border-radius:2px;\n    bottom:-2.5vmin;\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);\n    content:\"\";\n    left:-2.5vmin;\n    position:absolute;\n    right:-2.5vmin;\n    top:-2.5vmin;\n  }\n}\n\n.clean-slide {\n  position: relative;\n  display: inline-block;\n  width: 250px;\n  padding: 0px 10px;\n  height: 60px;\n  font-family: \"Open Sans\", sans;\n  font-size: 20px;\n  font-weight: bold;\n  color: #3B3024;\n  background: #efefef;\n  border-radius: 10px;\n  outline: 0;\n  transition: all .3s ease-in-out;\n  border: 3px solid #91553D;\n  \n  &::-webkit-input-placeholder {\n    color: #efefef;\n    font-weight: 300;\n  }\n}\n.clean-slide:focus,\n.clean-slide:active {\n  color: #3B3024;\n  text-indent: 0;\n  background: #fff5E1;\n\n  \n  &::-webkit-input-placeholder {\n    color: #aaa;\n  }\n}\n\n\n\n\n\n", "",{"version":3,"sources":["webpack://src/styles/index.scss"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,wBAAwB;EACxB,0BAA0B;EAC1B,2BAA2B;EAC3B,yBAAyB;EACzB,iBAAiB;EACjB,0BAA0B;EAC1B,wBAAwB;EACxB,0EAA0E;EAC1E,qBAAqB;EACrB,oBAAoB;EACpB,WAAW;EACX,SAAS;EACT;IACE,iBAAiB;IACjB,aAAa;IACb,4CAA4C;IAC5C,UAAU;IACV,WAAW;IACX,iBAAiB;IACjB,YAAY;IACZ,UAAU;EACZ;EACA;IACE,iBAAiB;IACjB,eAAe;IACf,uCAAuC;IACvC,UAAU;IACV,aAAa;IACb,iBAAiB;IACjB,cAAc;IACd,YAAY;EACd;AACF;;AAEA;EACE,kBAAkB;EAClB,qBAAqB;EACrB,YAAY;EACZ,iBAAiB;EACjB,YAAY;EACZ,8BAA8B;EAC9B,eAAe;EACf,iBAAiB;EACjB,cAAc;EACd,mBAAmB;EACnB,mBAAmB;EACnB,UAAU;EACV,+BAA+B;EAC/B,yBAAyB;;EAEzB;IACE,cAAc;IACd,gBAAgB;EAClB;AACF;AACA;;EAEE,cAAc;EACd,cAAc;EACd,mBAAmB;;;EAGnB;IACE,WAAW;EACb;AACF","sourcesContent":[".frame {\n  position: fixed;\n  background-color:#e0cab3;\n  border:solid 5vmin #5d2906;\n  border-bottom-color:#6F432A;\n  border-left-color:#5A3B28;\n  border-radius:2px;\n  border-right-color:#6F432A;\n  border-top-color:#5A3B28;\n  box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);\n  box-sizing:border-box;\n  display:inline-block;\n  height:76vh;\n  padding:0;\n  &:before {\n    border-radius:2px;\n    bottom:-2vmin;\n    box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;\n    content:\"\";\n    left:-2vmin;\n    position:absolute;\n    right:-2vmin;\n    top:-2vmin;\n  }\n  &:after {\n    border-radius:2px;\n    bottom:-2.5vmin;\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);\n    content:\"\";\n    left:-2.5vmin;\n    position:absolute;\n    right:-2.5vmin;\n    top:-2.5vmin;\n  }\n}\n\n.clean-slide {\n  position: relative;\n  display: inline-block;\n  width: 250px;\n  padding: 0px 10px;\n  height: 60px;\n  font-family: \"Open Sans\", sans;\n  font-size: 20px;\n  font-weight: bold;\n  color: #3B3024;\n  background: #efefef;\n  border-radius: 10px;\n  outline: 0;\n  transition: all .3s ease-in-out;\n  border: 3px solid #91553D;\n  \n  &::-webkit-input-placeholder {\n    color: #efefef;\n    font-weight: 300;\n  }\n}\n.clean-slide:focus,\n.clean-slide:active {\n  color: #3B3024;\n  text-indent: 0;\n  background: #fff5E1;\n\n  \n  &::-webkit-input-placeholder {\n    color: #aaa;\n  }\n}\n\n\n\n\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -10794,9 +10794,12 @@ var SAMPLE_PROBLEM = ['owl', 'apple', 'banana'];
 
 var Game = /*#__PURE__*/function () {
   function Game() {
+    var _this = this;
+
     _classCallCheck(this, Game);
 
     this.run = this.run.bind(this);
+    this.totalRound = 0;
     document.getElementById("question-form").addEventListener("submit", function (e) {
       e.preventDefault();
       var answer = document.getElementById("question").value;
@@ -10806,17 +10809,21 @@ var Game = /*#__PURE__*/function () {
         document.getElementById("submit-btn").style.display = "none";
         document.getElementById("guesser-question-text").style.display = "none";
         document.getElementById("acter-question-text").style.display = "none";
-        new _round__WEBPACK_IMPORTED_MODULE_0__["default"](answer);
+
+        _this.run(answer);
       } else {
         document.getElementById("question").placeholder = "Question can't be blank!";
       }
     });
-    this.run();
   }
 
   _createClass(Game, [{
     key: "run",
-    value: function run() {}
+    value: function run(answer) {
+      var round = new _round__WEBPACK_IMPORTED_MODULE_0__["default"](answer);
+      this.totalRound += 1;
+      document.getElementById("total-round").innerText = "".concat(this.totalRound);
+    }
   }]);
 
   return Game;
@@ -10885,9 +10892,11 @@ var Round = /*#__PURE__*/function () {
     _classCallCheck(this, Round);
 
     this.answer = answer;
+    this.won = false;
     this.start = this.start.bind(this);
     this.loading = this.loading.bind(this);
     this.handleEnd = this.handleEnd.bind(this);
+    this.handleWin = this.handleWin.bind(this);
     var startRoundBtn = document.getElementById("start-round-btn");
     startRoundBtn.addEventListener("click", function () {
       _this.start(_this.answer);
@@ -10914,9 +10923,9 @@ var Round = /*#__PURE__*/function () {
       var _this2 = this;
 
       // Wait for the answer
-      function waitForCondition(answer, handleEnd) {
+      function waitForCondition(answer, handleEnd, handleWin) {
         return new Promise(function (resolve) {
-          var timeleft = 60;
+          var timeleft = 5;
 
           function checkAnswer() {
             document.getElementById("progressBar").value = timeleft;
@@ -10928,6 +10937,7 @@ var Round = /*#__PURE__*/function () {
               setTimeout(function () {
                 return handleEnd();
               }, 7000);
+              handleWin();
               resolve();
             } else if (timeleft < 0) {
               document.getElementById("countdown").innerHTML = "Time's Up!";
@@ -10959,7 +10969,7 @@ var Round = /*#__PURE__*/function () {
               switch (_context.prev = _context.next) {
                 case 0:
                   _context.next = 2;
-                  return waitForCondition(answer, _this2.handleEnd);
+                  return waitForCondition(answer, _this2.handleEnd, _this2.handleWin);
 
                 case 2:
                 case "end":
@@ -10992,6 +11002,14 @@ var Round = /*#__PURE__*/function () {
       document.getElementById("submit-btn").style.display = "block";
       document.getElementById("guesser-question-text").style.display = "block";
       document.getElementById("acter-question-text").style.display = "block";
+    }
+  }, {
+    key: "handleWin",
+    value: function handleWin() {
+      var winRound = parseInt(document.getElementById("win-round").innerText);
+      winRound += 1;
+      console.log(winRound);
+      document.getElementById("win-round").innerText = winRound;
     }
   }]);
 
