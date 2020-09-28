@@ -328,3 +328,31 @@ p {
         box-shadow: none;
     }    
 }
+
+.link {
+    position: absolute;
+    left: 650px;
+    top: 30px;
+    margin-top: 10px;
+    display: inline-block; 
+    text-align: center;
+    padding:0;
+    width:450px;
+    height:70px;
+    /* border:4px solid #977961; */
+    outline:none;
+    /* background-color: #e0cab3;
+    border: 5px solid #5d2906; 
+    border-radius: 30px;
+    box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25); */
+}
+
+.link a {
+    margin: 5px 10px; 
+    font-size: 20px;
+    text-decoration: none;
+}
+.link a:hover {
+    cursor: pointer; 
+    text-decoration: underline;
+}

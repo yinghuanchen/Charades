@@ -56,7 +56,7 @@ export default class Round {
             document.getElementById("countdown").innerHTML = "Time's Up!";
             document.getElementById(
               "round-result"
-            ).innerText = `The answer is ${answer.toLowerCase()}`;
+            ).innerText = `The answer is ${answer}`;
             window.setTimeout(() => handleEnd(), 5000);
             resolve();
           } else {
@@ -75,9 +75,7 @@ export default class Round {
 
     // wait for the answer
     const run = async () => {
-    //   console.log("before");
       await waitForCondition(answer, this.handleEnd, this.handleWin);
-    //   console.log("after");
       return;
     };
 
@@ -109,9 +107,7 @@ export default class Round {
   handleWin() {
     // debugger;
     let winRound = parseInt(document.getElementById("win-round").innerText);
-    // console.log("win before", winRound);
     winRound += 1;
-    // console.log("win after", winRound);
     document.getElementById("win-round").innerText = winRound;
   }
 }
